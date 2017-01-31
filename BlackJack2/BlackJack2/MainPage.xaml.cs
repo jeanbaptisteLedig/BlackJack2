@@ -28,9 +28,14 @@ namespace BlackJack2
             this.InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void SignUp_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Signup));
+        }
+
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Signin));
         }
     }
 }
