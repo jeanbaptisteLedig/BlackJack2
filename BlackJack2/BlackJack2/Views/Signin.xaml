@@ -8,6 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="352,267,0,0" TextWrapping="Wrap" PlaceholderText="Pseudo" VerticalAlignment="Top" Width="362"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="352,325,0,0" TextWrapping="Wrap" PlaceholderText="Password" VerticalAlignment="Top" Width="362"/>
+        <Button x:Name="button" Content="Se connecter" HorizontalAlignment="Left" Margin="352,381,0,0" VerticalAlignment="Top" Height="32" Width="362"/>
+        <Button x:Name="ReturnButton" Content="Retour" HorizontalAlignment="Left" Margin="34,27,0,0" VerticalAlignment="Top" Height="70" Width="70" Click="returnClick"/>
     </Grid>
 </Page>

@@ -32,10 +32,9 @@ namespace BlackJack2.Views
 
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void returnClick(object sender, RoutedEventArgs e)
         {
-            string username = textBlock.Text;
-
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }
