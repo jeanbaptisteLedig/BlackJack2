@@ -26,5 +26,10 @@ namespace BlackJack2.Views
         {
             this.InitializeComponent();
         }
+
+        private void returnClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
     }
 }

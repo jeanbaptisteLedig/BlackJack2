@@ -8,13 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <CheckBox x:Name="checkBox" Content="Valider les conditions d'utilisations" HorizontalAlignment="Left" Margin="320,489,0,0" VerticalAlignment="Top" Width="394" FontSize="22"/>
+        <CheckBox x:Name="checkBox" Content="Valider les conditions d'utilisations" HorizontalAlignment="Left" Margin="352,495,0,0" VerticalAlignment="Top" Width="362" FontSize="22"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="434,91,0,0" TextWrapping="Wrap" Text="S'inscrire" VerticalAlignment="Top" Height="54" Width="338" SelectionChanged="textBlock_SelectionChanged" FontSize="36"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="352,211,0,0" TextWrapping="Wrap" PlaceholderText="Votre adresse email" VerticalAlignment="Top" Width="362"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="352,285,0,0" TextWrapping="Wrap" PlaceholderText="Pseudo" VerticalAlignment="Top" Width="362"/>
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="352,353,0,0" TextWrapping="Wrap" PlaceholderText="Nom" VerticalAlignment="Top" RenderTransformOrigin="1.746,0.422" Width="362"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="352,425,0,0" TextWrapping="Wrap" PlaceholderText="Password" VerticalAlignment="Top" Width="362"/>
-        <Button x:Name="button" Content="S'enregistrer" HorizontalAlignment="Left" Margin="454,589,0,0" VerticalAlignment="Top" Height="56" Width="207"/>
+        <Button x:Name="button" Content="S'enregistrer" HorizontalAlignment="Left" Margin="352,562,0,0" VerticalAlignment="Top" Height="32" Width="362"/>
+        <Button x:Name="ReturnButton" Content="Retour" HorizontalAlignment="Left" Margin="34,27,0,0" VerticalAlignment="Top" Height="70" Width="70" Click="returnClick"/>
 
     </Grid>
 </Page>
