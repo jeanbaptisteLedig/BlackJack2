@@ -31,5 +31,11 @@ namespace BlackJack2.Views
         {
 
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string username = textBlock.Text;
+
+        }
     }
 }
