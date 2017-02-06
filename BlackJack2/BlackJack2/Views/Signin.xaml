@@ -16,5 +16,6 @@
             <PasswordBox x:Name="textBox4" PlaceholderText="Password" Height="32" Width="362" Margin="0,0,0,20"/>
             <Button x:Name="button1" Content="Se connecter" Height="32" Width="362"/>
         </StackPanel>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="129,618,0,0" VerticalAlignment="Top" Click="Test"/>
     </Grid>
 </Page>
