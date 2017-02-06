@@ -1,8 +1,11 @@
-﻿using System;
+﻿using BlackJack2.Models;
+using BlackJack2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -35,6 +38,20 @@ namespace BlackJack2.Views
         private void returnClick(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string email = mail.Text;
+            string username = pseudo.Text;
+            string lastname = prenom.Text;
+            string firstname = nom.Text;
+            string password = paswword.Text;
+
+            User u = new User(username, firstname, lastname, email, password);
+
+            PersonViewModel vm = new PersonViewModel();
+            vm.addNewUser(u);
         }
     }
 }
