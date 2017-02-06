@@ -12,10 +12,11 @@
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="S'inscrire" Height="54" Width="158" FontSize="36" Margin="0,0,0,20"/>
-            <TextBox x:Name="textBox" TextWrapping="Wrap" PlaceholderText="Votre adresse email" Width="362" Margin="0,0,0,20"/>
-            <TextBox x:Name="textBox1" TextWrapping="Wrap" PlaceholderText="Pseudo" Width="362" Margin="0,0,0,20"/>
-            <TextBox x:Name="textBox2" TextWrapping="Wrap" PlaceholderText="Nom" Width="362" Margin="0,0,0,20"/>
-            <PasswordBox x:Name="textBox3" PlaceholderText="Password" Width="362" Margin="0,0,0,20"/>
+            <TextBox x:Name="mail" TextWrapping="Wrap" PlaceholderText="Votre adresse email" Width="362" Margin="0,0,0,20"/>
+            <TextBox x:Name="pseudo" TextWrapping="Wrap" PlaceholderText="Pseudo" Width="362" Margin="0,0,0,20"/>
+            <TextBox x:Name="nom" TextWrapping="Wrap" PlaceholderText="Nom" Width="362" Margin="0,0,0,20"/>
+            <TextBox x:Name="prenom" TextWrapping="Wrap" PlaceholderText="Prenom" Width="362" Margin="0,0,0,20"/>
+            <PasswordBox x:Name="password" PlaceholderText="Password" Width="362" Margin="0,0,0,20"/>
             <CheckBox x:Name="checkBox" Content="Valider les conditions d'utilisations" Width="362" FontSize="22" Margin="0,0,0,20"/>
             <Button x:Name="button" Content="S'enregistrer" Height="32" Width="362"/>
         </StackPanel>
