@@ -8,8 +8,21 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="SignUpButton" Content="Sign Up" HorizontalAlignment="Left" Margin="959,66,0,0" VerticalAlignment="Top" Click="SignUp_Click" Height="150" Width="250"/>
-        <Button x:Name="SignInButton" Content="Sign In" HorizontalAlignment="Left" Margin="959,497,0,0" VerticalAlignment="Top" Click="SignIn_Click" Height="150" Width="250"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="581" VerticalAlignment="Top" Width="881" Source="Assets/images/LasVegas.jpg" Margin="5,66,0,0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="117*"/>
+            <ColumnDefinition Width="43*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="SignUpButton" Content="Sign Up" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SignUp_Click" Height="150" Width="250" Grid.Row="0"/>
+            <Button x:Name="SignInButton" Content="Sign In" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SignIn_Click" Height="150" Width="250" Grid.Row="1"/>
+        </Grid>
+        
+        <Image x:Name="image" HorizontalAlignment="Center" VerticalAlignment="Center" Height="581" Width="881" Source="Assets/images/LasVegas.jpg"/>
     </Grid>
 </Page>

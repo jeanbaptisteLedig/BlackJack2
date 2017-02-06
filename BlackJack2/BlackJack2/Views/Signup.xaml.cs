@@ -27,11 +27,6 @@ namespace BlackJack2.Views
             this.InitializeComponent();
         }
 
-        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void returnClick(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));

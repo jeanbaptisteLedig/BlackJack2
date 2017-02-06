@@ -8,10 +8,13 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="493,267,0,0" TextWrapping="Wrap" PlaceholderText="Pseudo" VerticalAlignment="Top" Width="362"/>
-        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Margin="493,325,0,0" TextWrapping="Wrap" PlaceholderText="Password" VerticalAlignment="Top" Width="362"/>
-        <Button x:Name="button1" Content="Se connecter" HorizontalAlignment="Left" Margin="493,384,0,0" VerticalAlignment="Top" Height="32" Width="362"/>
-        <Button x:Name="ReturnButton1" Content="Retour" HorizontalAlignment="Left" Margin="34,27,0,0" VerticalAlignment="Top" Height="70" Width="70" Click="returnClick"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="572,172,0,0" TextWrapping="Wrap" Text="Se connecter" VerticalAlignment="Top" Height="54" Width="221" SelectionChanged="textBlock_SelectionChanged" FontSize="36"/>
+        <Button x:Name="ReturnButton1" Content="Retour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="70" Click="returnClick"/>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="textBlock" Text="Se connecter" TextWrapping="Wrap" Height="54" Width="221" FontSize="36" Margin="0,0,0,20"/>
+            <TextBox x:Name="textBox2" PlaceholderText="Pseudo" TextWrapping="Wrap" Height="32" Width="362" Margin="0,0,0,20"/>
+            <PasswordBox x:Name="textBox4" PlaceholderText="Password" Height="32" Width="362" Margin="0,0,0,20"/>
+            <Button x:Name="button1" Content="Se connecter" Height="32" Width="362"/>
+        </StackPanel>
     </Grid>
 </Page>
