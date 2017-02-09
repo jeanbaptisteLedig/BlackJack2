@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlackJack2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -36,9 +37,10 @@ namespace BlackJack2.Views
             this.Frame.Navigate(typeof(MainPage));
         }
 
-        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        private void Test(object sender, RoutedEventArgs e)
         {
-
+            TableViewModel vm = new TableViewModel();
+            vm.getTables();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

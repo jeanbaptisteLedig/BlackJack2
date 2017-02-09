@@ -30,11 +30,6 @@ namespace BlackJack2.Views
             this.InitializeComponent();
         }
 
-        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void returnClick(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
@@ -46,7 +41,7 @@ namespace BlackJack2.Views
             string username = pseudo.Text;
             string lastname = prenom.Text;
             string firstname = nom.Text;
-            string password = paswword.Text;
+            string password = this.password.Password;
 
             User u = new User(username, firstname, lastname, email, password);
 

@@ -8,15 +8,17 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <CheckBox x:Name="checkBox" Content="Valider les conditions d'utilisations" HorizontalAlignment="Left" Margin="481,540,0,0" VerticalAlignment="Top" Width="362" FontSize="22"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="575,103,0,0" TextWrapping="Wrap" Text="S'inscrire" VerticalAlignment="Top" Height="54" Width="158" SelectionChanged="textBlock_SelectionChanged" FontSize="36"/>
-        <TextBox x:Name="mail" HorizontalAlignment="Left" Margin="481,373,0,0" TextWrapping="Wrap" PlaceholderText="Votre adresse email" VerticalAlignment="Top" Width="362"/>
-        <TextBox x:Name="pseudo" HorizontalAlignment="Left" Margin="481,168,0,0" TextWrapping="Wrap" PlaceholderText="Pseudo" VerticalAlignment="Top" Width="362"/>
-        <TextBox x:Name="nom" HorizontalAlignment="Left" Margin="481,300,0,0" TextWrapping="Wrap" PlaceholderText="Nom" VerticalAlignment="Top" RenderTransformOrigin="1.746,0.422" Width="362"/>
-        <TextBox x:Name="paswword" HorizontalAlignment="Left" Margin="481,483,0,0" TextWrapping="Wrap" PlaceholderText="Password" VerticalAlignment="Top" Width="362"/>
-        <Button x:Name="button" Content="S'enregistrer" HorizontalAlignment="Left" Margin="481,612,0,0" VerticalAlignment="Top" Height="32" Width="362" Click="button_Click"/>
-        <Button x:Name="ReturnButton" Content="Retour" HorizontalAlignment="Left" Margin="34,27,0,0" VerticalAlignment="Top" Height="70" Width="70" Click="returnClick"/>
-        <TextBox x:Name="prenom" HorizontalAlignment="Left" Margin="481,235,0,0" TextWrapping="Wrap" PlaceholderText="Prénom" VerticalAlignment="Top" Width="362"/>
+        <Button x:Name="ReturnButton" Content="Retour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="70" Click="returnClick"/>
 
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="S'inscrire" Height="54" Width="158" FontSize="36" Margin="0,0,0,20"/>
+            <TextBox x:Name="mail" TextWrapping="Wrap" PlaceholderText="Votre adresse email" Width="362" Margin="0,0,0,20"/>
+            <TextBox x:Name="pseudo" TextWrapping="Wrap" PlaceholderText="Pseudo" Width="362" Margin="0,0,0,20"/>
+            <TextBox x:Name="nom" TextWrapping="Wrap" PlaceholderText="Nom" Width="362" Margin="0,0,0,20"/>
+            <TextBox x:Name="prenom" TextWrapping="Wrap" PlaceholderText="Prenom" Width="362" Margin="0,0,0,20"/>
+            <PasswordBox x:Name="password" PlaceholderText="Password" Width="362" Margin="0,0,0,20"/>
+            <CheckBox x:Name="checkBox" Content="Valider les conditions d'utilisations" Width="362" FontSize="22" Margin="0,0,0,20"/>
+            <Button x:Name="button" Content="S'enregistrer" Height="32" Width="362"/>
+        </StackPanel>
     </Grid>
 </Page>
