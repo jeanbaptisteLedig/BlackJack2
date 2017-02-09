@@ -9,13 +9,14 @@ namespace BlackJack2.Models
     
         public class User
         {
-            public String username { get; set; }
-            public String firstname { get; set; }
-            public String lastname { get; set; }
-            public String email { get; set; }
-            public String password { get; set; }
+            public string username { get; set; }
+            public string firstname { get; set; }
+            public string lastname { get; set; }
+            public string email { get; set; }
+            public string password { get; set; }
+            public string secret { get; set; }
 
-            public User(String username, String firstname, String lastname, String email, String password)
+        public User(string username, string firstname, string lastname, string email, string password)
             {
                 this.username = username;
                 this.firstname = firstname;
@@ -23,6 +24,13 @@ namespace BlackJack2.Models
                 this.email = email;
                 this.password = password;
             }
+      
+        public User(string email, string password, string secret)
+            {
+            this.email = email;
+            this.password = password;
+            this.secret = secret;
+            }
         }
-    }
 
+}
