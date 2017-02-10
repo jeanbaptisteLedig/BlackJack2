@@ -15,7 +15,6 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Security.Cryptography;
 using System.Text;
-using BlackJack2.ViewModel;
 using BlackJack2.Models;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, voir la page http://go.microsoft.com/fwlink/?LinkId=234238
@@ -37,11 +36,11 @@ namespace BlackJack2.Views
             this.Frame.Navigate(typeof(MainPage));
         }
 
-        private void Test(object sender, RoutedEventArgs e)
+        /*private void Test(object sender, RoutedEventArgs e)
         {
             TableViewModel vm = new TableViewModel();
             vm.getTables();
-        }
+        }*/
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
@@ -54,12 +53,10 @@ namespace BlackJack2.Views
 
 
             PersonViewModel vm = new PersonViewModel();
-
             vm.conUser(user);
-            
-
-
         }
+
+        //--------- Fonction de hashage -----------
         public string GetMD5(string password)
         {
             MD5 md5 = MD5.Create();
@@ -77,6 +74,11 @@ namespace BlackJack2.Views
             }
             var valueBytes = Encoding.UTF8.GetBytes(str.ToString());
             return Convert.ToBase64String(valueBytes);
+        }
+
+        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

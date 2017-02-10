@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlackJack2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,11 +26,10 @@ namespace BlackJack2.Views
         public Salon()
         {
             this.InitializeComponent();
+
+            TableViewModel listTable = new TableViewModel();
+            listTable.getTables();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
     }
 }

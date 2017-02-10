@@ -15,6 +15,8 @@ namespace BlackJack2.Models
             public string email { get; set; }
             public string password { get; set; }
             public string secret { get; set; }
+            public string token { get; set; }
+            public int stack { get; set; }
 
         public User(string username, string firstname, string lastname, string email, string password)
             {

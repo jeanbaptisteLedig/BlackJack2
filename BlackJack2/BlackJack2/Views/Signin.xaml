@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="mailCon" HorizontalAlignment="Left" Margin="493,267,0,0" TextWrapping="Wrap" PlaceholderText="Pseudo" VerticalAlignment="Top" Width="362"/>
+        <TextBox x:Name="mailCon" HorizontalAlignment="Left" Margin="493,267,0,0" TextWrapping="Wrap" PlaceholderText="Email" VerticalAlignment="Top" Width="362"/>
         <TextBox x:Name="passwordCon" HorizontalAlignment="Left" Margin="493,325,0,0" TextWrapping="Wrap" PlaceholderText="Password" VerticalAlignment="Top" Width="362"/>
         <Button x:Name="button1" Content="Se connecter" HorizontalAlignment="Left" Margin="493,384,0,0" VerticalAlignment="Top" Height="32" Width="362" Click="button1_Click"/>
         <Button x:Name="ReturnButton1" Content="Retour" HorizontalAlignment="Left" Margin="34,27,0,0" VerticalAlignment="Top" Height="70" Width="70" Click="returnClick"/>
