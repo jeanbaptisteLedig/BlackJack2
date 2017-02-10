@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
 using System.Net.Http;
-using Newtonsoft.Json;
-using System.Windows;
-using Windows.UI.Popups;
+
 using BlackJack2.Models;
-using System.Net.Http.Headers;
 using BlackJack2.Views;
-using Windows.UI.Xaml.Navigation;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
+using Windows.UI.Popups;
 
 namespace BlackJack2.ViewModel
 {
     class PersonViewModel
     {
-        public object Frame { get; private set; }
-        
+        //public object Frame { get; private set; }
+        Frame currentFrame { get { return Window.Current.Content as Frame; } }
+
         // ------------ Fonction d'ajout d'un utilisateur ---------------
         public async void addNewUser(User user)
         {
@@ -68,6 +65,8 @@ namespace BlackJack2.ViewModel
 
                     var dialog = new MessageDialog("Vous êtes connecté");
                     await dialog.ShowAsync();
+
+                    currentFrame.Navigate(typeof(Salon));
                 }
                 else
                 {

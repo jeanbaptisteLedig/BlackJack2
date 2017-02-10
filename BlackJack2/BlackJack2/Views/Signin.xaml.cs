@@ -1,21 +1,11 @@
-﻿using BlackJack2.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+﻿using System;
 using System.Security.Cryptography;
 using System.Text;
+
+using BlackJack2.ViewModel;
 using BlackJack2.Models;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, voir la page http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -51,7 +41,6 @@ namespace BlackJack2.Views
 
             User user = new User(email, password, secret);
 
-
             PersonViewModel vm = new PersonViewModel();
             vm.conUser(user);
         }
@@ -62,13 +51,11 @@ namespace BlackJack2.Views
             MD5 md5 = MD5.Create();
 
             byte[] inputBytes = Encoding.ASCII.GetBytes(password);
-
             byte[] hash = md5.ComputeHash(inputBytes);
 
             StringBuilder str = new StringBuilder();
 
             for (int i = 0; i < hash.Length; i++)
-
             {
                 str.Append(hash[i].ToString("x2"));
             }
