@@ -11,9 +11,6 @@ using Windows.UI.Xaml.Controls;
 
 namespace BlackJack2.Views
 {
-    /// <summary>
-    /// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
-    /// </summary>
     public sealed partial class Signin : Page
     {
         public Signin()

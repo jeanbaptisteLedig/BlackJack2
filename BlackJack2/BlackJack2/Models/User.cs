@@ -2,6 +2,7 @@
 
 namespace BlackJack2.Models
 {
+    //Classe Utilisateur
     public class User
     {
         public string username { get; set; }
@@ -34,6 +35,7 @@ namespace BlackJack2.Models
         {
             this.email = email;
         }
+
         public User()
         {
 

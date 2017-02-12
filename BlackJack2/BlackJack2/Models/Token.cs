@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlackJack2.Models
 {
+    //Classe Token
     class Token
     {
         [JsonProperty("token_type")]

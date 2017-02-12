@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlackJack2.Models
 {
+    //Classe APICulteur
     class APIculteur
     {
         [JsonProperty("user")]
@@ -18,7 +19,6 @@ namespace BlackJack2.Models
         {
             this.user = new User();
             this.token = token;
-
         }
     }
 }
