@@ -5,7 +5,6 @@ namespace BlackJack2.ViewModel
 {
     public class RelayCommand : ICommand
     {
-      
         private Action methodToExecute;
         private Func<bool> canExecuteEvaluator;
         private object CommandManager;
@@ -15,6 +14,7 @@ namespace BlackJack2.ViewModel
             this.methodToExecute = methodToExecute;
             this.canExecuteEvaluator = canExecuteEvaluator;
         }
+
         public RelayCommand(Action methodToExecute)
             : this(methodToExecute, null)
         {

@@ -17,12 +17,9 @@ namespace BlackJack2.ViewModel
 {
     class PersonViewModel
     {
-        //public object Frame { get; private set; }
         Frame currentFrame { get { return Window.Current.Content as Frame; } }
 
         private APIculteur _api;
-        
-
         public APIculteur Api
         {
             get { return _api; }
@@ -47,15 +44,12 @@ namespace BlackJack2.ViewModel
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     
-
-
         // ------------ Fonction d'ajout d'un utilisateur ---------------
         public async void addNewUser(User user)
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://demo.comte.re");
-
                 var json = JsonConvert.SerializeObject(new { user = user });
                 var itemJson = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpResponseMessage response = await client.PostAsync("/api/auth/register", itemJson);
@@ -71,6 +65,7 @@ namespace BlackJack2.ViewModel
                 }
             }
         }
+
         // ----------- Fonction de connexion de l'utilisateur --> retourne un JSON qui contient le token de session ----------
         public async void conUser(User user)
         {
@@ -89,10 +84,8 @@ namespace BlackJack2.ViewModel
                     
                     currentFrame.Navigate(typeof(Salon), this.Api);
                     var dialog = new MessageDialog("Vous êtes connecté");
-                   
                     
                     await dialog.ShowAsync();
-                
                 }
                 else
                 {

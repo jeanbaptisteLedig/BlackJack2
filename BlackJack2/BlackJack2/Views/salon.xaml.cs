@@ -17,9 +17,6 @@ namespace BlackJack2.Views
         public Salon()
         {
             this.InitializeComponent();
-
-            
-            
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -34,10 +31,9 @@ namespace BlackJack2.Views
 
         }
 
+        //Fonction deconnexion
         private void signout_Click(object sender, RoutedEventArgs e)
         {
-
-
             TableViewModel deco = new TableViewModel();
             this.DataContext = deco;
             deco.decoUser();

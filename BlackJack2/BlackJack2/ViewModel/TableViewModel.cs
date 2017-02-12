@@ -19,8 +19,6 @@ namespace BlackJack2.ViewModel
         Frame currentFrame { get { return Window.Current.Content as Frame; } }
 
         private APIculteur _api;
-
-
         public APIculteur Api
         {
             get { return _api; }
@@ -44,6 +42,7 @@ namespace BlackJack2.ViewModel
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         public TableViewModel(APIculteur Api)
         {
             this._api = Api;
@@ -57,21 +56,17 @@ namespace BlackJack2.ViewModel
         //---------- Fonction qui permet d'obtenir la liste des tables ouvertes --------------
         public async void getTables()
          {
-            
             using (var client = new HttpClient()) 
              {
-                 client.BaseAddress = new Uri("http://demo.comte.re");
+                client.BaseAddress = new Uri("http://demo.comte.re");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", this._api.token.access_token);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpRequestMessage req = new HttpRequestMessage();
-
-
-
                 HttpResponseMessage response = await client.GetAsync("/api/table/opened");
 
                 if (response.IsSuccessStatusCode) 
-                 { 
+                { 
                      string res = await response.Content.ReadAsStringAsync(); 
                      var dialog = new MessageDialog("get tableok ok");
                      await dialog.ShowAsync(); 
@@ -84,13 +79,13 @@ namespace BlackJack2.ViewModel
                  } 
              } 
          }
-       
+
+        // ----------- Fonction qui permet la deconnexion de l'utilisateur -----------
         public async void decoUser()
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://demo.comte.re/");
-
                 var json = JsonConvert.SerializeObject(this.Api.user.email);
                 json = "{\"email\":" + json + "}";
                 var itemJson = new StringContent(json, Encoding.UTF8, "application/json");

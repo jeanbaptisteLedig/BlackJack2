@@ -7,9 +7,6 @@ using Windows.UI.Xaml.Controls;
 
 namespace BlackJack2.Views
 {
-    /// <summary>
-    /// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
-    /// </summary>
     public sealed partial class Signup : Page
     {
         public Signup()
@@ -17,11 +14,13 @@ namespace BlackJack2.Views
             this.InitializeComponent();
         }
 
+        //Fonction du bouton retour
         private void returnClick(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
         }
 
+        //Fonction du bouton ajout nouvel utilisateur
         private void button_Click(object sender, RoutedEventArgs e)
         {
             string email = mail.Text;
