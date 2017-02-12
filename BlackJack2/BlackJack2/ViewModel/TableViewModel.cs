@@ -84,7 +84,21 @@ namespace BlackJack2.ViewModel
                  } 
              } 
          }
-       
+        private RelayCommand logout;
+        public ICommand LogoutCommand
+        {
+            get
+            {
+                
+                {
+                    logout = logout ?? (logout = new RelayCommand(p => { decoUser(); }));
+                }
+                return logout;
+            }
+        }
+
+        // deconnexion de l'utilisateur
+        
         public async void decoUser()
         {
             using (var client = new HttpClient())

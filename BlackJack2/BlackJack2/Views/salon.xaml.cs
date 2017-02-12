@@ -13,6 +13,7 @@ namespace BlackJack2.Views
     /// </summary>
     public sealed partial class Salon : Page
     {
+        int data = 0;
         
         public Salon()
         {
@@ -26,7 +27,8 @@ namespace BlackJack2.Views
             TableViewModel TableViewModel = new TableViewModel((APIculteur)e.Parameter);
             this.DataContext = TableViewModel;
             TableViewModel.getTables();
-            TableViewModel.decoUser();
+            
+            
         }
 
         private void textBlock_SelectionChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -34,13 +36,6 @@ namespace BlackJack2.Views
 
         }
 
-        private void signout_Click(object sender, RoutedEventArgs e)
-        {
-
-
-            TableViewModel deco = new TableViewModel();
-            this.DataContext = deco;
-            deco.decoUser();
-        }
+        
     }
 }

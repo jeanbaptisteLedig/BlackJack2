@@ -3,61 +3,28 @@ using System.Windows.Input;
 
 namespace BlackJack2.ViewModel
 {
-    public class RelayCommand : ICommand
-    {
-      
-        private Action methodToExecute;
-        private Func<bool> canExecuteEvaluator;
-        private object CommandManager;
 
-        public RelayCommand(Action methodToExecute, Func<bool> canExecuteEvaluator)
+        public class RelayCommand : ICommand
         {
-            this.methodToExecute = methodToExecute;
-            this.canExecuteEvaluator = canExecuteEvaluator;
-        }
-        public RelayCommand(Action methodToExecute)
-            : this(methodToExecute, null)
-        {
-        }
+            private Action<object> execute;
+            private Func<object, bool> canExecute;
 
-        event EventHandler ICommand.CanExecuteChanged
-        {
-            add
+            public event EventHandler CanExecuteChanged;
+
+            public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
             {
-                throw new NotImplementedException();
+                this.execute = execute;
+                this.canExecute = canExecute;
             }
 
-            remove
+            public bool CanExecute(object parameter)
             {
-                throw new NotImplementedException();
+                return this.canExecute == null || this.canExecute(parameter);
             }
-        }
 
-        public bool CanExecute(object parameter)
-        {
-            if (this.canExecuteEvaluator == null)
+            public void Execute(object parameter)
             {
-                return true;
+                this.execute(parameter);
             }
-            else
-            {
-                bool result = this.canExecuteEvaluator.Invoke();
-                return result;
-            }
-        }
-        public void Execute(object parameter)
-        {
-            this.methodToExecute.Invoke();
-        }
-
-        bool ICommand.CanExecute(object parameter)
-        {
-            throw new NotImplementedException();
-        }
-
-        void ICommand.Execute(object parameter)
-        {
-            throw new NotImplementedException();
         }
     }
-}
