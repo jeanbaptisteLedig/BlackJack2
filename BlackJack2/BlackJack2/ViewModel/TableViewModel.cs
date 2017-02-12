@@ -19,8 +19,6 @@ namespace BlackJack2.ViewModel
         Frame currentFrame { get { return Window.Current.Content as Frame; } }
 
         private APIculteur _api;
-
-
         public APIculteur Api
         {
             get { return _api; }
@@ -56,8 +54,7 @@ namespace BlackJack2.ViewModel
 
         //---------- Fonction qui permet d'obtenir la liste des tables ouvertes --------------
         public async void getTables()
-         {
-            
+        {
             using (var client = new HttpClient()) 
              {
                 client.BaseAddress = new Uri("http://demo.comte.re");
@@ -81,12 +78,12 @@ namespace BlackJack2.ViewModel
                  } 
              } 
          }
+
         private RelayCommand logout;
         public ICommand LogoutCommand
         {
             get
             {
-                
                 {
                     logout = logout ?? (logout = new RelayCommand(p => { decoUser(); }));
                 }
@@ -95,7 +92,6 @@ namespace BlackJack2.ViewModel
         }
 
         // deconnexion de l'utilisateur
-        
         public async void decoUser()
         {
             using (var client = new HttpClient())

@@ -5,11 +5,9 @@ using System.Net.Http;
 using BlackJack2.Models;
 using BlackJack2.Views;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
 using Windows.UI.Popups;
-using System.Diagnostics;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
