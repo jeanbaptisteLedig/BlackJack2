@@ -26,6 +26,7 @@ namespace BlackJack2.Views
             TableViewModel TableViewModel = new TableViewModel((APIculteur)e.Parameter);
             this.DataContext = TableViewModel;
             TableViewModel.getTables();
+            TableViewModel.decoUser();
         }
 
         private void textBlock_SelectionChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -35,12 +36,11 @@ namespace BlackJack2.Views
 
         private void signout_Click(object sender, RoutedEventArgs e)
         {
-            string email = "jblebgdu13@projet2merde.com";
 
-            User userSignout = new User(email);
 
-            TableViewModel signout = new TableViewModel();
-            signout.decoUser(userSignout);
+            TableViewModel deco = new TableViewModel();
+            this.DataContext = deco;
+            deco.decoUser();
         }
     }
 }

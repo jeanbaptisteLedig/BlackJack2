@@ -1,10 +1,13 @@
-﻿namespace BlackJack2.Models
+﻿using Newtonsoft.Json;
+
+namespace BlackJack2.Models
 {
     public class User
     {
         public string username { get; set; }
         public string firstname { get; set; }
         public string lastname { get; set; }
+        [JsonProperty("email")]
         public string email { get; set; }
         public string password { get; set; }
         public string secret { get; set; }

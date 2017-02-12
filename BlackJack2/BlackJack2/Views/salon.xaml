@@ -35,6 +35,6 @@
 
         </Grid>
         <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Liste des tables" VerticalAlignment="Center" HorizontalAlignment="Center" Width="265" Height="65" SelectionChanged="textBlock_SelectionChanged" FontSize="36" Grid.Row="0" />
-        <Button x:Name="signout" Content="Signout" HorizontalAlignment="Left" Margin="90,52,0,0" VerticalAlignment="Top" Height="65" Width="87" Click="signout_Click"/>
+        <Button x:Name="signout" Content="Signout" HorizontalAlignment="Left" Command="{Binding LogoutCommand}" Margin="90,52,0,0" VerticalAlignment="Top" Height="65" Width="87" Click="signout_Click"/>
     </Grid>
 </Page>

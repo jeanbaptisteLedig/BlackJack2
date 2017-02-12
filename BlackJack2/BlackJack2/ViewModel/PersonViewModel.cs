@@ -86,8 +86,7 @@ namespace BlackJack2.ViewModel
                     String _response = responseAPI.Content.ReadAsStringAsync().Result;
                     this.Api = new APIculteur();
                     this.Api = JsonConvert.DeserializeObject<APIculteur>(_response);
-                    Debug.WriteLine(_response);
-                    Debug.WriteLine(this.Api.user.stack);
+                    
                     currentFrame.Navigate(typeof(Salon), this.Api);
                     var dialog = new MessageDialog("Vous êtes connecté");
                    

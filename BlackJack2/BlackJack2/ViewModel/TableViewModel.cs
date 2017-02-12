@@ -10,6 +10,7 @@ using Windows.UI.Xaml;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 using System.Text;
+using System.Windows.Input;
 
 namespace BlackJack2.ViewModel
 {
@@ -72,7 +73,7 @@ namespace BlackJack2.ViewModel
                 if (response.IsSuccessStatusCode) 
                  { 
                      string res = await response.Content.ReadAsStringAsync(); 
-                     var dialog = new MessageDialog("ok", res);
+                     var dialog = new MessageDialog("get tableok ok");
                      await dialog.ShowAsync(); 
                  }
                  else 
@@ -83,13 +84,14 @@ namespace BlackJack2.ViewModel
                  } 
              } 
          }
-        public async void decoUser(User user)
+       
+        public async void decoUser()
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://demo.comte.re/");
 
-                var json = JsonConvert.SerializeObject(user.email);
+                var json = JsonConvert.SerializeObject(this.Api.user.email);
                 json = "{\"email\":" + json + "}";
                 var itemJson = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpResponseMessage response = await client.PostAsync("/api/auth/logout", itemJson);
