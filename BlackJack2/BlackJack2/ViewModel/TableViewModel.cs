@@ -60,14 +60,11 @@ namespace BlackJack2.ViewModel
             
             using (var client = new HttpClient()) 
              {
-                 client.BaseAddress = new Uri("http://demo.comte.re");
+                client.BaseAddress = new Uri("http://demo.comte.re");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", this._api.token.access_token);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpRequestMessage req = new HttpRequestMessage();
-
-
-
                 HttpResponseMessage response = await client.GetAsync("/api/table/opened");
 
                 if (response.IsSuccessStatusCode) 
@@ -104,7 +101,6 @@ namespace BlackJack2.ViewModel
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://demo.comte.re/");
-
                 var json = JsonConvert.SerializeObject(this.Api.user.email);
                 json = "{\"email\":" + json + "}";
                 var itemJson = new StringContent(json, Encoding.UTF8, "application/json");
@@ -114,7 +110,6 @@ namespace BlackJack2.ViewModel
                     string res = await response.Content.ReadAsStringAsync();
                     var dialog = new MessageDialog("Vous êtes déconnecté");
                     await dialog.ShowAsync();
-
                     currentFrame.Navigate(typeof(MainPage));
                 }
                 else
