@@ -82,29 +82,18 @@ namespace BlackJack2.ViewModel
                 HttpResponseMessage responseAPI = await client.PostAsync("/api/auth/login", itemJson);
                 if (responseAPI.IsSuccessStatusCode)
                 {
-                    //On récupère la réponse JSON de l'API, puis on la parse pour pouvoir lire dedans
-                    var res = await responseAPI.Content.ReadAsStringAsync();
-                  //  string result = responseAPI.Content.ReadAsStringAsync().Result;
-                   // this.Api = new APIculteur();
-                   // this.Api = JsonConvert.DeserializeObject<APIculteur>(result);
-
-                    var objectJson = JObject.Parse(res);
-                    var tokenObject = objectJson["tokens"];
-                    var userObject = objectJson["user"];
-
-                    //On stocke tous les résultats obtenus dans le JSON
-                    user.token = tokenObject["access_token"].ToString();
-                    user.firstname = userObject["firstname"].ToString();
-                    user.lastname = userObject["lastname"].ToString();
-                    user.email = userObject["email"].ToString();
-                    user.stack = int.Parse(userObject["stack"].ToString());
-
+                    
+                    String _response = responseAPI.Content.ReadAsStringAsync().Result;
+                    this.Api = new APIculteur();
+                    this.Api = JsonConvert.DeserializeObject<APIculteur>(_response);
+                    Debug.WriteLine(_response);
+                    Debug.WriteLine(this.Api.user.stack);
+                    currentFrame.Navigate(typeof(Salon), this.Api);
                     var dialog = new MessageDialog("Vous êtes connecté");
                    
-                    //Debug.WriteLine(this.Api.user.token);
+                    
                     await dialog.ShowAsync();
-                    Debug.WriteLine(tokenObject["access_token"].ToString());
-                    currentFrame.Navigate(typeof(Salon));
+                
                 }
                 else
                 {

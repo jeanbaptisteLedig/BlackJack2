@@ -60,12 +60,16 @@ namespace BlackJack2.ViewModel
             using (var client = new HttpClient()) 
              {
                  client.BaseAddress = new Uri("http://demo.comte.re");
-                 client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Add("accept", "application/json");
-                 client.DefaultRequestHeaders.Add("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI5ZjVhOTI2MjZhNjVkYTUzYWM4Y2M2MmExMmMxY2M3MWFlNjJmOWFiM2ZlNWNjNWNkZmEzNWMzZjk0NGZmMjI2Y2NiMjU4YmUzNjBjNTc2In0.eyJhdWQiOiJzeWx2aWVAcHJvamV0Mm1lcmRlLmNvbSIsImp0aSI6IjI5ZjVhOTI2MjZhNjVkYTUzYWM4Y2M2MmExMmMxY2M3MWFlNjJmOWFiM2ZlNWNjNWNkZmEzNWMzZjk0NGZmMjI2Y2NiMjU4YmUzNjBjNTc2IiwiaWF0IjoxNDg2OTMxMDk2LCJuYmYiOjE0ODY5MzEwOTYsImV4cCI6MTUxODQ2NzA5Niwic3ViIjoiNDQiLCJzY29wZXMiOlsiKiJdfQ.Z1hX_h9FT7pPgXmp-hKpRzxhDTDZi368zJ_ltFKbXY_r88Hj2FGj0D2laEmWXdldEfE0Ba-CtbpuVBL62M13eJwVHW30HI-haqvfgs4IYzH7mtIENL_pHhw8Khvr2RD2_bBYOs41tKNnpWah7kw0rQCduI3IwO4Rzdf-hTBMuQ0lESUfdq1OKfSyKfTsguHZmeDoYcZxBBfHItgqEjxbdEmDFCsa3rvMHjtdoSfEe0KdwYSi7UsfX16JfHNEwq2SWXBEzkdTXcFkV8Akhb3mojHiBaywDKGVLBcfAN_Wh5045oQe2Ab1n3Vd0UKcf-nsa6MfIhAXfNK0qVd3f6lnG8LLLFGvVefwtR-seWbbwCpEnr2Z4PuJj5j1Q9kLoXkJ8ojdzKYi3Qr90R0BwMHfjmaXHOkght5QuF8X3TzeYOO7jShvwBhMpvocMrmI7DGhbTLLGbm_fE1xx6J9S7xlaQu8kUTz9KNtW1WpMfpsrCbfBmqSRGdTkiwoYsv3pzs_azETfIeuhPI3MDM7Gr8OWzBwRIECemjW8ZCJDbjcCt5pDTGQFutGvGCOtcL8uE91i6FtinKCDv0cwFMzvsFM60Vp7YpD-p2x_Afx5b2pv_3_vD3nIoer4Lmzm2cHTDNRRnhhH13mHlINavaLFb3UtH1uUnudSbejNZrcCSuGOoQ");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", this._api.token.access_token);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpRequestMessage req = new HttpRequestMessage();
+
+
+
                 HttpResponseMessage response = await client.GetAsync("/api/table/opened");
-                 
-                 if (response.IsSuccessStatusCode) 
+
+                if (response.IsSuccessStatusCode) 
                  { 
                      string res = await response.Content.ReadAsStringAsync(); 
                      var dialog = new MessageDialog("ok", res);

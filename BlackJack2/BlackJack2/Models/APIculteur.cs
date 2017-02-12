@@ -12,7 +12,7 @@ namespace BlackJack2.Models
         [JsonProperty("user")]
         public User user { get; set; }
         [JsonProperty("tokens")]
-        public string token { get; set; }
+        public Token token { get; set; }
 
         public APIculteur()
         {
