@@ -6,12 +6,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="mailCon" HorizontalAlignment="Left" Margin="493,267,0,0" TextWrapping="Wrap" PlaceholderText="Email" VerticalAlignment="Top" Width="362"/>
-        <TextBox x:Name="passwordCon" HorizontalAlignment="Left" Margin="493,325,0,0" TextWrapping="Wrap" PlaceholderText="Password" VerticalAlignment="Top" Width="362"/>
-        <Button x:Name="button1" Content="Se connecter" HorizontalAlignment="Left" Margin="493,384,0,0" VerticalAlignment="Top" Height="32" Width="362" Click="button1_Click"/>
         <Button x:Name="ReturnButton1" Content="Retour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="70" Click="returnClick"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="572,172,0,0" TextWrapping="Wrap" Text="Se connecter" VerticalAlignment="Top" Height="54" Width="221" SelectionChanged="textBlock_SelectionChanged" FontSize="36"/>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="textBlock" Text="Se connecter" TextWrapping="Wrap" Height="54" Width="221" FontSize="36" Margin="0,0,0,20"/>
+            <TextBox x:Name="mailCon" PlaceholderText="Email" TextWrapping="Wrap" Height="32" Width="362" Margin="0,0,0,20"/>
+            <PasswordBox x:Name="passwordCon" PlaceholderText="Password" Height="32" Width="362" Margin="0,0,0,20"/>
+            <Button x:Name="button1" Content="Se connecter" Height="32" Width="362" Click="button1_Click"/>
+        </StackPanel>
     </Grid>
 </Page>
