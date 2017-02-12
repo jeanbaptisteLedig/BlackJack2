@@ -1,4 +1,6 @@
-﻿using BlackJack2.ViewModel;
+﻿using BlackJack2.Models;
+using BlackJack2.ViewModel;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using BlackJack2.Models;
@@ -24,6 +26,21 @@ namespace BlackJack2.Views
             TableViewModel TableViewModel = new TableViewModel((APIculteur)e.Parameter);
             this.DataContext = TableViewModel;
             TableViewModel.getTables();
+        }
+
+        private void textBlock_SelectionChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+
+        }
+
+        private void signout_Click(object sender, RoutedEventArgs e)
+        {
+            string email = "jblebgdu13@projet2merde.com";
+
+            User userSignout = new User(email);
+
+            TableViewModel signout = new TableViewModel();
+            signout.decoUser(userSignout);
         }
     }
 }

@@ -26,9 +26,10 @@
             this.password = password;
             this.secret = secret;
         }
-        public User()
-        {
 
+        public User(string email)
+        {
+            this.email = email;
         }
     }
 }

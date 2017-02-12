@@ -26,17 +26,10 @@ namespace BlackJack2.Views
             this.Frame.Navigate(typeof(MainPage));
         }
 
-        /*private void Test(object sender, RoutedEventArgs e)
-        {
-            TableViewModel vm = new TableViewModel();
-            vm.getTables();
-        }*/
-
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             string email = mailCon.Text;
-            string password = passwordCon.Text;
-
+            string password = passwordCon.Password;
             string secret = GetMD5(password);
 
             User user = new User(email, password, secret);
