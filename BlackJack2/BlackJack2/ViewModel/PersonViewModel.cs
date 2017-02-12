@@ -9,6 +9,9 @@ using Newtonsoft.Json.Linq;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
 using Windows.UI.Popups;
+using System.Diagnostics;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace BlackJack2.ViewModel
 {
@@ -16,6 +19,35 @@ namespace BlackJack2.ViewModel
     {
         //public object Frame { get; private set; }
         Frame currentFrame { get { return Window.Current.Content as Frame; } }
+
+        private APIculteur _api;
+        
+
+        public APIculteur Api
+        {
+            get { return _api; }
+            set
+            {
+                SetProperty<APIculteur>(ref this._api, value);
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        {
+            if (object.Equals(storage, value)) return false;
+            storage = value;
+            this.OnPropertyChanged(propertyName);
+            return true;
+        }
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    
+
 
         // ------------ Fonction d'ajout d'un utilisateur ---------------
         public async void addNewUser(User user)
@@ -52,6 +84,10 @@ namespace BlackJack2.ViewModel
                 {
                     //On récupère la réponse JSON de l'API, puis on la parse pour pouvoir lire dedans
                     var res = await responseAPI.Content.ReadAsStringAsync();
+                  //  string result = responseAPI.Content.ReadAsStringAsync().Result;
+                   // this.Api = new APIculteur();
+                   // this.Api = JsonConvert.DeserializeObject<APIculteur>(result);
+
                     var objectJson = JObject.Parse(res);
                     var tokenObject = objectJson["tokens"];
                     var userObject = objectJson["user"];
@@ -64,8 +100,10 @@ namespace BlackJack2.ViewModel
                     user.stack = int.Parse(userObject["stack"].ToString());
 
                     var dialog = new MessageDialog("Vous êtes connecté");
+                   
+                    //Debug.WriteLine(this.Api.user.token);
                     await dialog.ShowAsync();
-
+                    Debug.WriteLine(tokenObject["access_token"].ToString());
                     currentFrame.Navigate(typeof(Salon));
                 }
                 else
