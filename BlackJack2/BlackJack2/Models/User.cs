@@ -31,5 +31,9 @@
         {
             this.email = email;
         }
+        public User()
+        {
+
+        }
     }
 }
